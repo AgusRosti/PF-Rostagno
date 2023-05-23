@@ -1,0 +1,149 @@
+
+.formularios{
+    text-align: center;
+
+    @include computadora {
+        padding-inline: 180px;
+    }
+
+    .bi{
+        font-size: 2.5rem;
+        color: rgb(230, 44, 44);
+
+        @include tablet {
+            font-size: 3rem;
+        }
+
+            @include computadora {
+                font-size: 4rem;
+            }
+    }
+
+    h2{
+        @extend %titulos;
+        color: rgb(22, 80, 22);
+        text-shadow: none;
+        font-size: 2rem;
+        line-height: 30px;
+
+        @include computadora {
+            font-size: 3rem;
+            line-height: 50px
+        }
+    }
+
+    p{
+        @extend %parrafos;
+
+        @include computadora {
+            font-size: 2rem;
+            line-height: 40px;
+            padding: 10px;
+        }
+    }
+
+    nav{
+        line-height: 15px;
+
+        a{
+            @extend %cursiva;
+            font-size: 1.2rem;
+            color: azure; 
+
+            @include tablet {
+                font-size: 1.5rem;
+                line-height: 20px;
+                padding-inline: 20px
+            }
+
+            @include computadora {
+            font-size: 2rem;
+            line-height: 40px;
+            padding: 30px;
+            }
+        }
+
+    }
+}
+
+.content-form{
+    .text-focus-in{animation:text-focus-in 1s cubic-bezier(.55,.085,.68,.53) both}
+    @keyframes text-focus-in{0%{filter:blur(12px);opacity:0}100%{filter:blur(0);opacity:1}}
+
+    @include tablet {
+        display: flex;
+        justify-content: center
+    }
+
+    .form-c{
+        @include flex (flex, column, center, center);
+        background-image: url(../img/fondo3.png);
+        background-position: center;
+        background-size: cover;
+        gap: 5px;
+        margin-top: 20px;
+        padding-block: 20px;
+        border: 3px solid rgb(22, 80, 22);
+        border-radius: 20px;
+
+        @include tablet{
+            gap: 10px;
+            width: 650px;
+            padding-block: 50px;
+            }
+
+        div{
+
+            p{
+                font-family: $text-3;
+                font-size: 1.2rem;
+                text-align: center;
+
+                @include tablet {
+                    font-size: 1.8rem
+                }
+            }
+
+            .fomr-i,
+            textarea {
+                width: 200px;
+                padding: 5px;
+                outline: none;
+                font-family: $text-3;
+                font-size: 1rem;
+                text-align: center;
+                color: gray;
+
+                @include tablet {
+                    width: 300px;
+                    font-size: 1.2rem;
+                }
+
+                @include computadora {
+                    font-size: 1.5rem
+                }
+            }
+
+
+            input[type="submit"] {
+                @extend %botones;
+
+                &:visited{
+                    @extend %animacion-b;
+                }
+
+                @include computadora {
+                    font-size: 1.8rem;
+                    padding: 2px 45px;
+    
+                    &:hover{
+                        color: $color-4;
+                        background-color: $color-1;
+                        box-shadow: rgba(230, 245, 228, 0.17) 0px -23px 25px 0px inset, rgba(168, 167, 167, 0.15) 0px -36px 30px 0px inset, rgba(192, 191, 191, 0.1) 0px -79px 40px 0px inset, rgba(248, 247, 247, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                        transition: 1.5seg;
+                    }
+                }
+            }
+        }
+    }
+}

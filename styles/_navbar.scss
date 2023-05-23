@@ -1,0 +1,53 @@
+.navbar,
+.navbar-expand{
+    background-color: #44521d;
+    font-size: .8rem;
+    line-height: 25px;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+
+    @include computadora {
+        font-size: 1.5rem;
+        padding: 10px 50px;
+        gap: 46%;
+    }
+
+    img{
+        @include tablet {
+            width: 150px;
+            height: 60px;
+        }
+    }
+}
+
+.navbar-toggler{
+    border: none;
+    font-size: 1.6em;
+}
+
+.navbar-collapse{
+
+    .navbar-nav{
+        
+        .nav-item{
+            
+            .nav-link{
+                color: $color-2 !important;
+                font-family: $text-4;
+                font-size: 2rem;
+                transition: all 1s;
+
+                @include computadora {
+
+                    &:hover{
+                        transition: 1s;
+                        transform: scale(1.1);
+                        padding-bottom: 15px;
+                        border-bottom: 2px solid $color-2;
+                    }
+                }
+            }
+        }
+    }
+}
